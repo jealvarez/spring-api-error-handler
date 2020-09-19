@@ -33,6 +33,19 @@ Jorge Alvarez <alvarez.jeap@gmail.com>
     implementation 'org.jealvarez:spring-api-error-handler:1.0'
     ```
 
+- Create a configuration class
+
+```java
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@ComponentScan(basePackages = {"org.jealvarez"})
+public class ApiErrorHandlerConfiguration {
+
+}
+```
+
 - Create custom error handlers
 
 ```java
