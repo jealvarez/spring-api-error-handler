@@ -10,32 +10,27 @@ Jorge Alvarez <alvarez.jeap@gmail.com>
 
 - Java 11+
 
-## **Example**
+## **How to use it?**
 
-```json
-{
-  "name": "UNPROCESSABLE_ENTITY",
-  "details": [
-    {
-      "value": "1234567890123456a",
-      "issue": "INVALID_PARAMETER_VALUE",
-      "description": "The value of a field is invalid.",
-      "field": "paymentMethod.accountNumber",
-      "location": "body"
-    },
-    {
-      "value": "U",
-      "issue": "INVALID_STRING_LENGTH",
-      "description": "The value of a field is either too short or too long.",
-      "field": "paymentMethod.issuingCountryIsoCode",
-      "location": "body"
-    }
-  ],
-  "message": "The requested action could not be performed, semantically incorrect, or failed business validation."
-}
-```
+- Include dependency
 
-## **Custom Messages**
+  - Maven
+
+    ```xml
+    <dependency>
+      <groupId>org.jealvarez</groupId>
+      <artifactId>spring-api-error-handler</artifactId>
+      <version>1.0</version>
+    </dependency>
+    ```
+
+  - Gradle
+
+    ```text
+    implementation 'org.jealvarez:spring-api-error-handler:1.0'
+    ```
+
+- Create custom error handlers
 
 ```java
 import org.jealvarez.api.error.handling.model.enums.ErrorLocation;
@@ -84,5 +79,30 @@ public class ErrorHandlerRestControllerAdvice extends ErrorHandlerRestController
         return apiResponseFactory.buildErrorResponse(HttpStatus.UNPROCESSABLE_ENTITY, List.of(errorResponseDetail));
     }
 
+}
+```
+
+- Result
+
+```json
+{
+  "name": "UNPROCESSABLE_ENTITY",
+  "details": [
+    {
+      "value": "1234567890123456a",
+      "issue": "INVALID_PARAMETER_VALUE",
+      "description": "The value of a field is invalid.",
+      "field": "paymentMethod.accountNumber",
+      "location": "body"
+    },
+    {
+      "value": "U",
+      "issue": "INVALID_STRING_LENGTH",
+      "description": "The value of a field is either too short or too long.",
+      "field": "paymentMethod.issuingCountryIsoCode",
+      "location": "body"
+    }
+  ],
+  "message": "The requested action could not be performed, semantically incorrect, or failed business validation."
 }
 ```
