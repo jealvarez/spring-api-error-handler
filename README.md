@@ -1,6 +1,6 @@
 # **Spring Api Error Handler**
 
-![Build Status](https://github.com/jealvarez/spring-api-error-handler/workflows/JavaCI/badge.svg)](https://github.com/jealvarez/spring-api-error-handler/actions?query=workflow%3AJavaCI)
+[![Build Status](https://github.com/jealvarez/spring-api-error-handler/workflows/JavaCI/badge.svg)](https://github.com/jealvarez/spring-api-error-handler/actions?query=workflow%3AJavaCI)
 [![Latest Stable Version](https://img.shields.io/github/v/release/jealvarez/spring-api-error-handler?sort?newer)](https://github.com/jealvarez/spring-api-error-handler/releases)
 
 Provides the configuration to catch any exception thrown transforming it in a custom json error response.
